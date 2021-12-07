@@ -3,7 +3,7 @@
 namespace MulkiAqi192\RulesUI;
 
 use pocketmine\Server;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 use pocketmine\plugin\PluginBase;
 
@@ -17,8 +17,8 @@ class main extends PluginBase implements Listener {
 
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		if(is_null($this->getServer()->getPluginManager()->getPlugin("FormAPI"))){
-			$this->getLogger()->info("§cYou need FormAPI to use RulesUI Plugin! disabling plugin...");
+		if(is_null($this->getServer()->getPluginManager()->getPlugin("FormsUI"))){
+			$this->getLogger()->info("§cYou need FormsUI to use RulesUI Plugin! disabling plugin...");
 			$this->getServer()->getPluginManager()->disablePlugin($this);
 		} else {
 			$this->getLogger()->info("§aFormAPI is Founded! Enabling plugin.... Support me on PayPal if you like this plugin! §bhttps://paypal.me/jedimasters");
@@ -47,7 +47,7 @@ class main extends PluginBase implements Listener {
 	}
 
 	public function rules($player){
-		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+		$api = $this->getServer()->getPluginManager()->getPlugin("FormsUI");
 		$form = $api->createSimpleForm(function (Player $player, int $data = null){
 			$result = $data;
 			if($result === null){
