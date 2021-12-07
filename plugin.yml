@@ -1,9 +1,11 @@
 name: RulesUI
 main: MulkiAqi192\RulesUI\Main
-author: MulkiAqi192
-api: 3.0.0
+author: MulkiAqi192 & Updated to pm4 by mcprince147
+api: 4.0.0
 version: 1.0
 
 commands:
   rules:
-    description: "Read the server rules"
+    usage: /rules
+    aliases: [rule]
+    description: Read Rules
